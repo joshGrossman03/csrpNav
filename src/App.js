@@ -7,7 +7,7 @@ import Navigation from '../src/containers/Navigation'
 import AddDocument from '../src/containers/AddDocument'
 import Rules from '../src/containers/Rules'
 import Sandbox from './components/sandbox/sandbox';
-import Amplify,  {Auth} from 'aws-amplify'
+import Amplify from 'aws-amplify'
 import awsconfig from './aws-exports'
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 Amplify.configure(awsconfig);
@@ -19,8 +19,6 @@ const App = () => {
         <div>
             <AmplifySignOut />
             <Layout>
-                
-                
                 <Switch>
                     <Route path="/" exact component={Navigation} />
                     <Route path="/swi" exact component={Swi} />
