@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+
 import {Card} from 'semantic-ui-react'
-import { getCollection } from '../containers/libraryReducer';
+
 import DocList from './DocList'
 
 const SectionCard = (props) => {

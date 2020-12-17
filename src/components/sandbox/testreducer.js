@@ -1,14 +1,9 @@
 
 const INCREMENT_COUNTER = 'INCREMENT COUNTER';
 const DECREMENT_COUNTER = 'DECREMENT COUNTER';
-const LIBRARIES = 'LIBRARIES'
 
-export function libraries(library) {
-    return {
-        type:LIBRARIES,
-        payload:library
-    }
-}
+
+
 
 export function increment(amount) {
     return{
@@ -41,11 +36,7 @@ export default function testReducer(state = initialState, action){
                 ...state,
                 data: state.data - action.payload,
             };
-        case LIBRARIES:
-            return {
-                ...state,
-                swiLibrary: state.swiLibrary
-            }
+        
         default: 
         return state;
     }
