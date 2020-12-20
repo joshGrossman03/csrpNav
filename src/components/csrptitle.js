@@ -1,8 +1,11 @@
 import {Container} from 'semantic-ui-react'
+import { useAuth } from '../contexts/AuthContext';
+const CsrpTitle = () => {
 
-function CsrpTitle () {
+    const { currentUser } = useAuth();
     return (
-        <Container textAlign="center" style={{backgroundColor:'#14375A', padding:'40px'}}>
+        <Container fluid textAlign="center" style={{backgroundColor:'#14375A', padding:'40px'}}>
+            {currentUser.email? <><h4 style={{color:"#ECEDED"}}>Welcome:  {currentUser.email}</h4></>:null}
             <h1 style={{color:'white'}} >Commercial Signs Regulatory Program</h1>
             <p style={{color:'white'}} >
                 The CSRP Navigator is a simple tool to allow 

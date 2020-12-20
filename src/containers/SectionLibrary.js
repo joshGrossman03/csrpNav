@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import SectionCard from '../components/SectionCard'
 import {Container} from 'semantic-ui-react'
 import * as Firestore from '../firestore/firestoreservice'
+import Navmenu from '../components/Navmenu';
+import CsrpTitle from '../components/csrptitle';
 
 
 
@@ -63,7 +65,9 @@ class SectionLibrary extends Component {
         
         return(
             
-            <Container>
+            <Container fluid style={{marginTop:"20px"}}>
+                <Navmenu/>
+                <CsrpTitle/>
                 <SectionCard items={this.state.library}/>
             </Container>     
         );}

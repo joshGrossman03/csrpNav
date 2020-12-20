@@ -7,6 +7,8 @@ import MapPic from '../images/map.svg';
 import CompPic from '../images/accela.png';
 import UsefulTools from '../images/toolbox.png';
 import {Card, Container} from 'semantic-ui-react'
+import Navmenu from '../components/Navmenu';
+import CsrpTitle from '../components/csrptitle';
 
 
 
@@ -15,8 +17,12 @@ import {Card, Container} from 'semantic-ui-react'
 const Navigation = ()=> {
 
     return (
-            <Container style={{marginTop:"20px"}}>
-                 <Card.Group centered items>
+        <div>
+        
+            <Container fluid style={{marginTop:"20px"}}>
+            <Navmenu/>
+            <CsrpTitle/>
+                 <Card.Group centered items style={{marginTop:"20px"}}>
                     <NavLink linkName="SWIs" to="/swi" source={Billboard}></NavLink>
                     <NavLink linkName="Policies"  to="/policies" source={Policy}></NavLink>
                     <NavLink linkName="Rules and Statutes" to="/rules-statutes" source={Rules}></NavLink>
@@ -26,6 +32,7 @@ const Navigation = ()=> {
                     <NavLink linkName="Sandbox" to="/sandbox" source={UsefulTools}></NavLink>
                 </Card.Group>
             </Container>
+            </div>
                
 
             

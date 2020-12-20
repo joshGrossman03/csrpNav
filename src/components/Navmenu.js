@@ -1,49 +1,46 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import {Menu} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
-
+import {useAuth} from '../contexts/AuthContext'
        
 
-export default class Navmenu extends Component {
-
-  state = {}
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  render() {
-    const { activeItem } = this.state
+  const Navmenu =()=> {
+    const [activeItem, setActiveItem] = useState();
+    const handleItemClick = (e, { name }) => setActiveItem(name);
+   
     
     return (
-      <Menu>
-        <Link to="/">
-        <Menu.Item
-          name='home'
-          active={activeItem === 'home'}
-          onClick={this.handleItemClick}
-        >
-          Home
-        </Menu.Item>
-        </Link>
+      <Menu pointing secondary>
        
-<Link to="add-document">
-<Menu.Item
-          name='add a document'
-          active={activeItem === 'add a document'}
-          onClick={this.handleItemClick}
-        >
-          Add a Document
-        </Menu.Item>
-</Link>
-        
-
-        <Menu.Item
-          name='upcomingEvents'
-          active={activeItem === 'upcomingEvents'}
-          onClick={this.handleItemClick}
-        >
-          New Feature
-        </Menu.Item>
-      </Menu>
+         
+         <Link to="/"> <Menu.Item
+            name='home'
+            active={activeItem === 'home'}
+            onClick={handleItemClick}
+          /></Link>
+          <Link to="/add-document"><Menu.Item
+            name='Add Document'
+            active={activeItem === 'messages'}
+            onClick={handleItemClick}
+          /></Link>
+          <Menu.Item
+            name='New Feature'
+            active={activeItem === 'friends'}
+            onClick={handleItemClick}
+          />
+           
+          
+          <Menu.Menu position='right'>
+            
+            <Menu.Item
+              name='logout'
+              active={activeItem === 'logout'}
+              onClick={handleItemClick}
+            />
+          </Menu.Menu>
+        </Menu>
   )
     }
-}
+
+  
+export default Navmenu

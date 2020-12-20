@@ -9,14 +9,11 @@ import {Container} from 'semantic-ui-react'
 const Layout = (props) => (
 
     <Container fluid>
-        <Navmenu signOut={props.signOut}/>
+        <Navmenu />
         <CSRPTitle/>
-        <div>
-        {props.children}
-        </div>
-          
-            
-
+        <Container fluid>
+            {props.children}
+        </Container>
     </Container>
   
             

@@ -3,6 +3,8 @@ import * as Firestore from '../firestore/firestoreservice';
 import FormField from '../components/FormField';
 import { Container, Button, Form } from 'semantic-ui-react'
 import DropdownField from '../components/DropdownField'
+import Navmenu from '../components/Navmenu';
+import CsrpTitle from '../components/csrptitle';
 
 
 class AddDocument extends Component {
@@ -136,7 +138,9 @@ onDocumentSubmit = (collection) => {
       
       <div>
         
-        <Container style={{ marginTop: "20px" }} >
+        <Container fluid style={{ marginTop: "20px" }} >
+          <Navmenu/>
+          <CsrpTitle/>
           <Form>
            <DropdownField label="Document Type" options={this.state.typeOptions} value={this.state.typeOptions.value} onChange={(e) => this.setState({ docType: e.target.value })}></DropdownField>
            {console.log("docType: ", this.state.docType)}

@@ -2,6 +2,8 @@
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 import firebase from "firebase/app";
+import '../.env.local';
+
 
 // Add the Firebase services that you want to use
 import "firebase/auth";
@@ -12,6 +14,8 @@ import "firebase/storage";
 // TODO: Replace the following with your app's Firebase project configuration
 // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyDmoEAh5npIxeZE1A91WtUx1R2YY6DNr64",
     authDomain: "csrpnavigator.firebaseapp.com",
@@ -26,5 +30,6 @@ const firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.firestore();
+  export const auth = firebase.auth();
 
   export default firebase;
